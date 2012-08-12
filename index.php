@@ -16,10 +16,16 @@ if(!empty($_POST))
    fputs($file,$_POST["data"]);
    fclose($file);
 
-   $number = sizeof(glob("*")) - 1; // Count the number of file less the php file.
+   $number = sizeof(glob("*")) - 2; // Count the number of file less the php
+				    // file and the robots.txt.
    print "Number of files: $number\nYour link:\n$url$fileName\n";
 }
 else {
    print 'This page only accept POST method.';
+   echo "<form method=post  action='index.php'>
+      <textarea rows='6' cols='40' name='data'>Your text here.</textarea><br />
+   <input type='submit' value='Send'>
+   </form>";
+
 }
 ?>
