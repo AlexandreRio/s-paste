@@ -5,7 +5,7 @@
 # https://github.com/AlexandreRio/s-paste
 #
 # /!\ Don't forget to edit the url /!\
-#############################################################
+   #############################################################
 #         By Alexandre Rio / Orbital
 # http://alexrio.fr/	https://twitter.com/Rio_Alexandre
 #############################################################
@@ -14,9 +14,9 @@
 #
 #############################################################
 
-help="Usage: \n- ./spaste [you can write an URL here]\n- ./riopaste -f
-file/path/here"
-url="alexrio.fr/p/"
+help="Usage: \n- ./spaste [you can write an URL here]\n- ./spaste -f
+file/path/here\n- ./spaste -d Deletes all the files, use with caution ! "
+url="localhost/p/"
 
 if [ $# -eq 2 ] && [ $1 = '-f' ]
 then
@@ -24,6 +24,9 @@ then
 elif [ $# -eq 1 ] && [ $1 = '--help' ]
 then
    echo -e $help
+elif [ $# -eq 1 ] && [ $1 = '-d' ]
+then
+   curl -d "clear=true" $url
 elif [ $# -eq 1 ]
 then
    curl -d "data=$1" $url
