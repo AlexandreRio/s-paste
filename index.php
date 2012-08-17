@@ -1,7 +1,7 @@
 <?php
 if(!empty($_POST))
 {
-   $url = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+   $url = 'http://'.$_SERVER['SERVER_NAME']."/p/";
    $size = 5; // Lenqht of the name of the file
    $historyName = '.history'; // Name of the file containing all the created file name
 

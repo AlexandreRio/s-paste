@@ -1,0 +1,4 @@
+<files .history>
+Order Allow,Deny
+Deny from all
+</files>
